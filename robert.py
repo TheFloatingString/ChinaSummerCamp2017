@@ -77,7 +77,7 @@ class Pillow:
 class DUTCH_GUY(Pillow):
     """Child class"""
     def __init__(self,comfy,squishy,isCool,isSmart):
-        super().__init__(comfy, squishy)
+        super().__init__(comfy, squishy)   # Initialize parent class instance
         self.isCool = isCool
         self.isSmart = isSmart
 
