@@ -58,12 +58,6 @@ class Pillow:
         self.comfy = comfy
         self.squishy = squishy
 
-    def update(self, iterable):
-        for item in iterable:
-            self.items_list.append(item)
-
-    __update = update   # private copy of original update() method
-
     def printPillow(self):
         print("COMFORT {}".format(self.comfy))
         print("SQUISHY {}".format(self.squishy))
@@ -78,13 +72,13 @@ class DUTCH_GUY(Pillow):
     """Child class"""
     def __init__(self,comfy,squishy,isCool,isSmart):
         super().__init__(comfy, squishy)   # Initialize parent class instance
-        self.isCool = isCool
+        self.__isCool = __isCool           # Private attribute
         self.isSmart = isSmart
 
     def isACoolDutchGuy(self):
-        if self.isCool >5 and self.isSmart > 5:
+        if self.__isCool >5 and self.isSmart > 5:
             print("THIS IS A COOL DUTCH GUY")
-        elif self.isCool >3 and self.isSmart>2:
+        elif self.__isCool >3 and self.isSmart>2:
             pritn("THIS GUY IS DUTCH")
         else:
             print("NOT DUTCH")
